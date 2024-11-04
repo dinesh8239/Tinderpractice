@@ -1,22 +1,19 @@
 const express = require('express')
 const app = express()
 
-
-app.use("/pest", (req, res) => {
-    res.send('mere mehaboob')
+app.get('/test',(req, res) => {
+    res.send('data keep successfully in db')
 })
 
-app.use("/test2", (req, res) => {
-    res.send('All is good2')
-})
-app.use("/test", (req, res) => {
-    res.send('All is well')
+app.post('/test', (req, res) => {
+res.send('data get successfully')
 })
 
+app.delete('/test',(req, res) => {
+    res.send('deleted successfully')
+})
 
-app.use("/", (req, res) => {
+app.listen(5000, () => {
+    console.log('server is running at port 5000');
     
-    res.send('Data successfully get')
-})
-
-app.listen(5000); 
+}); 
